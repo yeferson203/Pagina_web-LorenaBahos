@@ -268,7 +268,7 @@ function Index() {
   }, []);
 
   useEffect(() => {
-    const sections = ["inicio", "servicios", "sobre", "resenas", "equipo", "contacto", "ubicacion"]
+    const sections = ["inicio", "servicios", "sobre", "resenas", "equipo", "ubicacion", "contacto"]
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => section !== null);
 
