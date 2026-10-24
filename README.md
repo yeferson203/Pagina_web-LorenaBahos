@@ -23,3 +23,9 @@ The social preview image is served from `/social-share.webp`.
 caching for the social preview and favicon on hosts that support the Cloudflare Pages `_headers`
 format. Configure equivalent response headers in your hosting provider if it does not support this
 file.
+
+The public crawler files are `public/robots.txt` and `public/sitemap.xml`. If the site's domain
+changes, update the sitemap URL in `robots.txt` and the canonical URL in `sitemap.xml` to match
+`VITE_SITE_URL`. After deployment, add the site in Google Search Console, verify domain ownership,
+and submit `https://mglorenabahos.netlify.app/sitemap.xml`. Discovery and indexing are controlled
+by search engines and are not guaranteed by these files alone.

@@ -31,7 +31,7 @@ import {
 const TITLE = "Mg. Lorena Bahos | Rejuvenecimiento Facial y Estética en Mocoa, Putumayo";
 const DESC =
   "Academia y Centro de Belleza Integral en Mocoa. Levantamiento de párpados, hidratación profunda, tratamiento de melasma, eliminación de tatuajes con láser sin dolor y sueroterapia.";
-const SITE_URL = (import.meta.env.VITE_SITE_URL ?? "https://mglorenabahos.netlify.app").replace(
+const SITE_URL = (import.meta.env["VITE_SITE_URL"] ?? "https://mglorenabahos.netlify.app").replace(
   /\/+$/,
   "",
 );
@@ -61,12 +61,17 @@ export const Route = createFileRoute("/")({
         content:
           "estética Mocoa, rejuvenecimiento facial Putumayo, tratamiento melasma Mocoa, eliminación de tatuajes láser Mocoa, sueroterapia Mocoa, Lorena Bahos",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "googlebot", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_CO" },
       { property: "og:url", content: CANONICAL_URL },
       { property: "og:image", content: SOCIAL_IMAGE_URL },
+      { property: "og:image:type", content: "image/webp" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
         content: "Mg. Lorena Bahos, Centro de Belleza Integral en Mocoa",
@@ -84,7 +89,14 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "BeautySalon",
           name: "Mg. Lorena Bahos — Academia y Centro de Belleza Integral",
+          url: CANONICAL_URL,
+          image: SOCIAL_IMAGE_URL,
+          description: DESC,
           telephone: "+57 323 7298148",
+          areaServed: [
+            { "@type": "City", name: "Mocoa" },
+            { "@type": "AdministrativeArea", name: "Putumayo" },
+          ],
           address: {
             "@type": "PostalAddress",
             streetAddress: "Av. San Francisco, enseguida del ICBF, Edificio Fénix, piso 2",
