@@ -31,12 +31,14 @@ import {
 const TITLE = "Mg. Lorena Bahos | Rejuvenecimiento Facial y Estética en Mocoa, Putumayo";
 const DESC =
   "Academia y Centro de Belleza Integral en Mocoa. Levantamiento de párpados, hidratación profunda, tratamiento de melasma, eliminación de tatuajes con láser sin dolor y sueroterapia.";
-const SITE_URL = (import.meta.env["VITE_SITE_URL"] ?? "https://mglorenabahos.netlify.app").replace(
+// Open Graph crawlers require absolute URLs, so fall back to the production domain.
+const SITE_URL = (import.meta.env["VITE_SITE_URL"] || "https://mglorenabahos.netlify.app").replace(
   /\/+$/,
   "",
 );
-const CANONICAL_URL = SITE_URL ? `${SITE_URL}/` : "/";
-const SOCIAL_IMAGE_URL = SITE_URL ? `${SITE_URL}/social-share.webp` : "/social-share.webp";
+const CANONICAL_URL = `${SITE_URL}/`;
+// JPG instead of WebP: WhatsApp, LinkedIn and others don't reliably render WebP previews.
+const SOCIAL_IMAGE_URL = `${SITE_URL}/social-share.jpg`;
 const YEARS_EXPERIENCE = 5;
 const WHATSAPP_URL = "https://wa.me/573237298148";
 const WA = `${WHATSAPP_URL}?${new URLSearchParams({ text: "Hola, quisiera más información sobre sus servicios." })}`;
@@ -69,7 +71,8 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "es_CO" },
       { property: "og:url", content: CANONICAL_URL },
       { property: "og:image", content: SOCIAL_IMAGE_URL },
-      { property: "og:image:type", content: "image/webp" },
+      { property: "og:image:secure_url", content: SOCIAL_IMAGE_URL },
+      { property: "og:image:type", content: "image/jpeg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
