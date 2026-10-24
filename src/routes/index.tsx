@@ -31,7 +31,10 @@ import {
 const TITLE = "Mg. Lorena Bahos | Rejuvenecimiento Facial y Estética en Mocoa, Putumayo";
 const DESC =
   "Academia y Centro de Belleza Integral en Mocoa. Levantamiento de párpados, hidratación profunda, tratamiento de melasma, eliminación de tatuajes con láser sin dolor y sueroterapia.";
-const SITE_URL = (import.meta.env.VITE_SITE_URL ?? "").replace(/\/+$/, "");
+const SITE_URL = (import.meta.env.VITE_SITE_URL ?? "https://mglorenabahos.netlify.app").replace(
+  /\/+$/,
+  "",
+);
 const CANONICAL_URL = SITE_URL ? `${SITE_URL}/` : "/";
 const SOCIAL_IMAGE_URL = SITE_URL ? `${SITE_URL}/social-share.webp` : "/social-share.webp";
 const YEARS_EXPERIENCE = 5;
