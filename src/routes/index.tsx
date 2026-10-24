@@ -540,8 +540,8 @@ function Index() {
         </section>
 
         {/* Illustrative experience examples */}
-        <section id="resenas" className="bg-[#f1ede5] px-6 py-24 lg:px-10 lg:py-32">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <section id="resenas" className="bg-[#f1ede5] px-6 py-16 lg:px-10 lg:py-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div className="reveal max-w-xl">
               <Quote className="mb-5 h-8 w-8 text-gold/70" strokeWidth={1.2} />
               <p className="text-[10px] tracking-[0.28em] uppercase text-gold">
@@ -735,7 +735,7 @@ function Index() {
         {/* Team */}
         <section
           id="equipo"
-          className="mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 md:grid-cols-2 lg:gap-24 lg:px-10 lg:py-32"
+          className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24"
         >
           <div className="reveal order-2 md:order-2">
             <p className="flex items-center gap-3 text-[10px] tracking-[0.28em] uppercase text-gold">
@@ -778,7 +778,7 @@ function Index() {
         </section>
 
         {/* Location */}
-        <section id="ubicacion" className="scroll-mt-24 px-6 pb-24 lg:px-10 lg:pb-32">
+        <section id="ubicacion" className="scroll-mt-24 px-6 pb-16 lg:px-10 lg:pb-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:gap-16">
             <div className="reveal">
               <p className="flex items-center gap-3 text-[10px] tracking-[0.28em] uppercase text-gold">
@@ -801,7 +801,7 @@ function Index() {
               <iframe
                 title="Mapa de ubicación del Centro de Belleza Integral Mg. Lorena Bahos en Mocoa"
                 src={MAP_EMBED_URL}
-                className="h-[320px] w-full rounded-[1.5rem] border-0 sm:h-[400px]"
+                className="h-[280px] w-full rounded-[1.5rem] border-0 sm:h-[400px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
